@@ -262,15 +262,18 @@ select:focus{{border-color:var(--bdh);}}
 /* MAIN */
 .main{{flex:1;overflow-y:auto;overflow-x:hidden;padding:12px 18px 20px;}}
 .main::-webkit-scrollbar{{width:4px;}}.main::-webkit-scrollbar-thumb{{background:var(--bdh);border-radius:2px;}}
-.feed-hdr{{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px;}}
-.feed-lbl{{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fnt);text-transform:uppercase;letter-spacing:2px;display:flex;align-items:center;gap:10px;}}
+.feed-hdr{{display:flex;align-items:center;margin-bottom:10px;}}
+.feed-lbl{{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fnt);text-transform:uppercase;letter-spacing:2px;display:flex;align-items:center;gap:10px;flex:1;}}
 .feed-lbl::after{{content:'';flex:1;height:1px;background:var(--bd);min-width:20px;}}
 
-/* PAGINATION */
-.pag{{display:flex;align-items:center;gap:4px;flex-shrink:0;}}
+/* PAGINATION — bottom bar */
+.pag-footer{{
+  display:flex;align-items:center;justify-content:center;
+  gap:4px;padding:16px 0 4px;
+}}
 .pg-b{{
   font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;
-  width:26px;height:26px;border-radius:6px;
+  width:28px;height:28px;border-radius:6px;
   border:1px solid var(--bd);background:var(--sf);
   color:var(--dim);cursor:pointer;transition:all .18s;
   display:flex;align-items:center;justify-content:center;
@@ -278,7 +281,7 @@ select:focus{{border-color:var(--bdh);}}
 .pg-b:hover:not([disabled]){{border-color:var(--bdh);color:var(--ac);background:var(--gw);}}
 .pg-b.on{{border-color:var(--bdh);background:var(--gw);color:var(--ac);}}
 .pg-b[disabled]{{opacity:.2;cursor:default;}}
-.pg-i{{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fnt);padding:0 2px;}}
+.pg-i{{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--fnt);padding:0 3px;}}
 
 /* GRID */
 .grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}}
@@ -388,9 +391,9 @@ select:focus{{border-color:var(--bdh);}}
   <div id="errPanel"></div>
   <div class="feed-hdr">
     <div class="feed-lbl" id="feedLbl">Loading…</div>
-    <div class="pag" id="pag"></div>
   </div>
   <div class="grid" id="grid"></div>
+  <div class="pag-footer" id="pag"></div>
 </div>
 
 <script>
