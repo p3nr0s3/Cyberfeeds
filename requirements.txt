@@ -2,3 +2,4 @@ streamlit>=1.32.0
 feedparser>=6.0.11
 requests>=2.31.0
 trafilatura>=2.0.0
+streamlit-javascript>=0.1.5
